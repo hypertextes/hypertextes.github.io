@@ -1,0 +1,32 @@
+@use 'lecture/lecture';
+
+html, body { width: 100%; }
+
+html { height: 100%; }
+
+body, header { display: flex; }
+
+body {
+    flex-direction: column;
+    max-width: 80em;
+    min-height: 100%;
+    @include lecture.lerp((
+        'padding-top': (16px, 64px, 320px, 1280px),
+        'padding-left': (16px, 128px, 320px, 1280px),
+        'padding-right': (16px, 128px, 320px, 1280px)
+    ));
+}
+
+header {
+    align-items: baseline;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    hr {
+        width: 100%;
+    }
+}
+
+footer {
+    margin-top: auto;
+}

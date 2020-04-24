@@ -1,11 +1,36 @@
+{% set current_date = now() | date(format="%Y-%m-%dT%H:%M:%S", timezone="Europe/Paris") %}
+{% set current_year = current_date | date(format="%Y", timezone="Europe/Paris") %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>{{ config.title }}</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ config.base_url }}/index.css">
 </head>
 <body>
-    <h1>{{ config.title }}</h1>
+    <header>
+        <h1><a href="{{ config.base_url }}" title="{{ config.title }}">{{ config.title }}</a></h1>
+        <a href="https://github.com/hypertextes" target="_blank" title="github/hypertextes">
+            github
+        </a>
+        <hr>
+    </header>
+    <main>
+        <p>Il n'y a pas d'article actuellement.</p>
+    </main>
+    <footer>
+        <hr>
+        <p>
+            <small>
+                <time datetime="{{ current_date }}">{{ current_year }}</time> —
+                <a href="{{ config.base_url }}" title="{{ config.title }}">
+                    {{ config.title }}
+                </a>
+            </small>
+        </p>
+    </footer>
 </body>
 </html>

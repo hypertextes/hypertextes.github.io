@@ -1,5 +1,8 @@
 # The Site title
-title = "Hypertextes"
+title = "hypertextes"
+
+# The Site description
+description = "hypertextes"
 
 # The URL the site will be built for
 base_url = "https://hypertextes.github.io"
